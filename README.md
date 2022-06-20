@@ -2,11 +2,21 @@
 
 
 
-Typescript
+# Table of Contents
+
+- Typescript
+  - Node Typing
+  - Modules
+    - Export 
+    - Import - Single Module
+    - Import - Entire Module
+    - Import - Rename Module
 
 
 
 
+
+---
 
 
 
@@ -60,7 +70,7 @@ $ npx tsc
 
 
 
-## Node Typings
+## Node Typing
 
 Buatlah file **test.ts** kemudian tulis kode berikut :
 
@@ -214,9 +224,9 @@ let companyName: string = "The Boring Company";
 
 
 
-### Import
+### Import - Single Module
 
-Di bawah ini adalah **module import** untuk menggunakan sebuah **modules** :
+Buatlah file dengan nama MainEmployee.ts, kemudian tulis contoh kode seperti pada di bawah ini :
 
 ```typescript
 import { Employee } from "./Employee";
@@ -225,3 +235,55 @@ let employeeObject = new Employee("Gun Gun Febrianza", 1);
 employeeObject.printEmployee();
 ```
 
+Di atas adalah contoh **single module import** untuk menggunakan sebuah **modules**.
+
+
+
+### Import - Entire Module
+
+Di bawah ini adalah contoh **entire modules import** untuk menggunakan sebuah **modules** :
+
+```typescript
+import * as EMP from "./Employee";
+
+let employeeObject = new EMP.Employee("Gun Gun Febrianza", 1);
+employeeObject.printEmployee();
+```
+
+
+
+### Import - Rename Module
+
+Di bawah ini adalah contoh **renaming imported module** untuk menggunakan sebuah **modules** :
+
+```typescript
+import { Employee as manpower } from "./Employee";
+
+let employeeObject = new manpower("Gun Gun Febrianza", 1);
+employeeObject.printEmployee();
+```
+
+
+
+## Compiling Modules
+
+Untuk kompilasi **modules** kita harus menentukan dulu **target environment** yang kita inginkan, terdapat beberapa pilihan :
+
+1. None
+2. CommonJS
+3. AMD
+4. UMD
+5. System
+6. ES6, ES2015, ESNext
+
+Tambahkan **flags** berikut saat melakukan kompilasi **modules** :
+
+```
+--module <target environment> <file path>
+```
+
+Mengenai **Target Environment** :
+
+- Jika target yang kita inginkan adalah **server-side applications** untuk **node.js** gunakan **CommonJS Module Loader**.
+- Jika target yang kita inginkan adalah **client-side applications** dalam **web browser apps** gunakan **AMD Target** yang dapat dimuat dengan **require.js**.
+- Jika target yang kita inginkan adalah **server-side** dan **client-side modules** gunakan **UMD Target**.
