@@ -11,6 +11,7 @@
     - Import - Single Module
     - Import - Entire Module
     - Import - Rename Module
+  - Compiling Modules
 
 
 

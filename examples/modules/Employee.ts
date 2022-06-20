@@ -6,7 +6,7 @@ export class Employee {
     this.employeeName = name;
     this.employeeID = code;
   }
-  displayEmployee() {
+  printEmployee() {
     console.log(
       "Employee ID: " +
         this.employeeID +
