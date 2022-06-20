@@ -68,7 +68,7 @@ Buatlah file **test.ts** kemudian tulis kode berikut :
 console.log("Hello World!"); //Prints Hello World!
 ```
 
-Maka akan muncul informasi **error** seperti berikut :
+Jika project yang kita buat adalah **node applications** maka akan muncul informasi **error** seperti berikut :
 
 ```
 any
@@ -134,7 +134,14 @@ myConsole.warn(`Danger ${name}! Danger!`);
 @see — source
 ```
 
+Jika project yang kita buat adalah web applications di dalam browser tambahkan konfigurasi berikut dalam **tsconfig**  :
 
+```json
+        "lib": [
+            "es6",
+            "dom"    <------- Add this "dom" here
+        ],
+```
 
 
 
@@ -144,7 +151,77 @@ myConsole.warn(`Danger ${name}! Danger!`);
 
 Setiap kode yang kita tulis dalam **typescript** konteksnya langsung berada di dalam **global scope**. Jika kita memiliki beberapa **file** dalam satu **project** maka semua **variable**, **function**, **class** akan diinterpretasikan sebagai satu kesatuan di dalam **global scope**. Kode yang di tulis di dalam salah satu **file** dapat diakses di dalam kode di **file** lainnya.
 
+Jika kita membuat **file1.ts** dengan isi kode berikut :
+
+```javascript
+const hello : string = "Hello World!";
+```
+
+Di bawah ini adalah **file2.ts** :
+
+```javascript
+console.log(hello); //Prints Hello World!
+
+hello = "Hello Maudy!"; // allowed
+```
+
+Variabel **hello** dikenali dan diinterpretasikan dalam **global scope**. Aksesibilitas ini bisa menimbulkan masalah karena berpotensi termodifikasi dan tertimpa (**overriden**) tanpa diketahui sama sekali. Hal ini sangat berbahaya karena bisa menimbulkan konflik dan **error** pada **project typescript** yang kita bangun. 
+
+Untuk mengatasi permasalahan ini **typescript** menyediakan konsep **modules** dan **namespaces** untuk mencegah suatu kode berada dalam konteks **global scope**. Konsep **modules** dan **namespaces** juga membantu untuk kegiatan **maintenance codebase** dalam skala besar.
+
+Tujuan dari **modules** adalah membangun sebuah isolasi dalam konteks **local scope**, sehingga **variable**, **function**, **class** yang di deklarasikan di dalam modules tidak dapat diakses oleh kode yang berada di luar **modules**. Sebuah **module** dapat dibuat menggunakan **keyword export** dan untuk menggunakan sebuah **modules** kita bisa menggunakan **keyword import**.
+
+Dalam **typescript**, sebuah **file** yang berisi **top-level export** atau **import** dianggap sebuah sebuah **modules**. Di bawah ini adalah contoh pembuatan **modules** dalam **file1.ts**:
+
+```javascript
+export const hello : string = "Hello World!";
+```
+
+Jika **file2.ts** dieksekusi maka akan menimbulkan **error** :  
+
+```javascript
+console.log(hello); //Error: cannot find 'hello'
+
+hello = "Hello Maudy!"; // allowed
+```
 
 
 
+### Export 
+
+Buatlah **file** dengan nama **Employee.ts** :
+
+```typescript
+export let age: number = 30;
+export class Employee {
+  employeeID: number;
+  employeeName: string;
+  constructor(name: string, code: number) {
+    this.employeeName = name;
+    this.employeeID = code;
+  }
+  printEmployee() {
+    console.log(
+      "Employee ID: " +
+        this.employeeID +
+        ", Employee Name: " +
+        this.employeeName
+    );
+  }
+}
+let companyName: string = "The Boring Company";
+```
+
+
+
+### Import
+
+Di bawah ini adalah **module import** untuk menggunakan sebuah **modules** :
+
+```typescript
+import { Employee } from "./Employee";
+
+let employeeObject = new Employee("Gun Gun Febrianza", 1);
+employeeObject.printEmployee();
+```
 
