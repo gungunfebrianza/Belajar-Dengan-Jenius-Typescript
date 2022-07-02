@@ -10,6 +10,7 @@
     - Static Typing
     - Typescript Compiler
     - Transpillation
+    - Compiler Options
   - Node Typing
   - Type Annotations
   - Modules
@@ -29,11 +30,15 @@
 
 # Typescript
 
-| Parameter                   | Value                                                        | Note |
-| --------------------------- | ------------------------------------------------------------ | ---- |
-|                             |                                                              |      |
-| Typescript Compiler Options | [Click Here](https://www.typescriptlang.org/docs/handbook/compiler-options.html) |      |
-|                             |                                                              |      |
+Last Touched 3-7-2022.
+
+| Parameter                              | Value                                                        | Note |
+| -------------------------------------- | ------------------------------------------------------------ | ---- |
+| Official Website                       | [Click Here](https://www.typescriptlang.org/)                |      |
+| Announcing Typescript 4.8 Beta Version | [Click Here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-8-beta/) |      |
+| Release Note Typescript 4.7            | [Click Here](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html) |      |
+| Typescript Compiler Options            | [Click Here](https://www.typescriptlang.org/docs/handbook/compiler-options.html) |      |
+|                                        |                                                              |      |
 
 Reserved.
 
