@@ -195,6 +195,10 @@ Saat kita mendeklarasikan suatu variabel dalam **typescript** kita harus menamba
 
 <img src="assets/Type-Annotation.png" style="zoom:100%;" />
 
+Untuk mendeklarasikan data tipe pada suatu variabel kita dapat melakukannya secara **explicit** atau **implicit** :
+
+<img src="assets/Declare-Type.png" style="zoom:100%;" />
+
 ---
 
 
