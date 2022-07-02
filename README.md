@@ -135,6 +135,27 @@ Pada kasus yang lebih **advance** struktur penulisan pada **typescript** menjadi
 
 Perhatikan gambar di bawah ini :
 
+<img src="assets/Transpillation-Example-2.PNG" style="zoom:100%;" />
+
+
+
+### Compiler Options
+
+Kita dapat membuat sebuah **pre-configuration** sebelum kompiler melakukan kompilasi, dengan cara membuat sebuah **file tsconfig.json**. Di bawah ini adalah contoh **Compiler Options** :
+
+```json
+  {
+    "compilerOptions": {
+      "baseUrl": "basic",
+      "outDir": "./dist",
+      "noEmitOnError": true,
+      "target": "es5"
+    }
+  }
+```
+
+
+
 ----
 
 
