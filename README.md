@@ -193,7 +193,7 @@ Jika project yang kita buat adalah web applications di dalam browser tambahkan k
 
 Saat kita mendeklarasikan suatu variabel dalam **typescript** kita harus menambahkan sebuah **colon** dan **type annotation**. Di bawah ini adalah **type annotation** yang tersedia di dalam **typescript** :
 
-
+<img src="assets/Type-Annotation.png" style="zoom:100%;" />
 
 ---
 
