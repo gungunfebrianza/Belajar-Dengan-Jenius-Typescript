@@ -50,6 +50,16 @@ Sebagai **superset javascript** kita dapat mengubah setiap **javascript file** k
 
 <img src="assets/Javascript-to-Typescript.png" style="zoom:100%;" />
 
+**Typescript** juga menjadi sebuah **superset** atas **EcmaScript** yang menjadi penentu spesifikasi standar penulisan **javascript**. **ES Next** merepresentasikan versi yang akan datang dan versi terakhir dari **EcmaScript**.
+
+<img src="assets/EcmaScript-Superset.png" style="zoom:100%;" />
+
+Sebagai **superset javascript** apa saja keuntungan yang dapat diberikan oleh **typescript**?
+
+
+
+## Compilation
+
 
 
 ----
