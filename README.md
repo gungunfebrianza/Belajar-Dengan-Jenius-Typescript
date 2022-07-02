@@ -5,6 +5,11 @@
 # Table of Contents
 
 - Typescript
+  - Why Typescript?
+    - Compilation
+    - Static Typing
+    - Typescript Compiler
+    - Transpillation
   - Node Typing
   - Type Annotations
   - Modules
@@ -58,7 +63,11 @@ Sebagai **superset javascript** apa saja keuntungan yang dapat diberikan oleh **
 
 
 
-## Compilation
+## Why Typescript?
+
+
+
+### Compilation
 
 Pada **javascript** kita harus mengeksekusi kode **javascript** terlebih dahulu untuk memastikan bahwa program **javascript** benar benar **valid**. Pada **typescript**, terdapat proses **transpillation**.
 
@@ -79,6 +88,24 @@ Dengan begitu pengembangan **software** menjadi lebih aman, sebagai contoh di ba
 ```typescript
 let fullname: number;
 fullname = "Maudy Ayunda"; // compile-time error
+```
+
+
+
+### Typescript Compiler
+
+**Typescript Compiler** adalah program **compiler** yang akan melakukan **transpilling** yaitu konversi **typescript** ke dalam **javascript** dan memastikan kode tidak memiliki **type error**.
+
+Untuk melakukan instalasi **Typescript Compiler** eksekusi perintah di bawah ini :
+
+```bash
+$ npm install -g typescript
+```
+
+Untuk memastikan **typescript compiler** sudah terpasang eksekusi perintah di bawah ini :
+
+```bash
+$ tsc -V
 ```
 
 
@@ -247,6 +274,30 @@ Saat kita mendeklarasikan suatu variabel dalam **typescript** kita harus menamba
 Untuk mendeklarasikan data tipe pada suatu variabel kita dapat melakukannya secara **explicit** atau **implicit** :
 
 <img src="assets/Declare-Type.png" style="zoom:100%;" />
+
+### Declare Explicit
+
+Di bawah ini adalah contoh penggunaan **type annotation** pada **primitive data type**. Deklarasi dilakukan secara eksplisit dengan menegaskan tipe data yang diberikan :
+
+```typescript
+  const username: string = "Maudy Ayunda";
+  const height: number = 167.13;
+  const isCute: boolean = true;
+```
+
+
+
+### Declare Implicit 
+
+Di bawah ini adalah deklarasi tipe data secara implisit, **typescript compiler** akan memberi tipe data otomatis berdasarkan **literal** yang diberikan :
+
+```typescript
+  const username = "Maudy Ayunda";
+  const height = 167.13;
+  const isCute = true;
+```
+
+
 
 ---
 
