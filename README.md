@@ -110,6 +110,31 @@ $ tsc -V
 
 
 
+### Transpillation
+
+Buatlah sebuah **file** dengan nama **main.ts** kemudian tulis kode dibawah ini :
+
+```typescript
+  let fullname: string;
+  fullname = "Maudy Ayunda";
+```
+
+Untuk melakukan kompilasi eksekusi perintah di bawah ini :
+
+```bash
+$ tsc main.ts
+```
+
+Maka sebuah **file javascript** akan diproduksi dengan nama **main.js**.
+
+<img src="assets/Transpillation-Example.png" style="zoom:100%;" />
+
+Jika kita bandingkan sebelum dan sesudah kompilasi kita dapat melihat perbedaannya pada gambar di atas. 
+
+Pada kasus yang lebih **advance** struktur penulisan pada **typescript** menjadi lebih rumit namun setiap komponen program yang kita bangun tertata rapih sehingga memiliki **code readability** yang lebih baik. 
+
+Perhatikan gambar di bawah ini :
+
 ----
 
 
