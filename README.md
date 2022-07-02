@@ -40,8 +40,6 @@ Last Touched 3-7-2022.
 | Typescript Compiler Options            | [Click Here](https://www.typescriptlang.org/docs/handbook/compiler-options.html) |      |
 |                                        |                                                              |      |
 
-Reserved.
-
 **Typescript** adalah sebuah **superset javascript** yang dikembangkan oleh **Microsoft**. **Typescript** juga digunakan dalam sebuah **Open Source Project** yang menginspirasi **Ryan Dahl** bernama **Deno**, sebuah **Runtime Engine** yang dapat digunakan untuk mengeksekusi **Typescript**.
 
 <img src="assets/Superset-Javascript.png" style="zoom:100%;" />
@@ -159,7 +157,85 @@ Kita dapat membuat sebuah **pre-configuration** sebelum kompiler melakukan kompi
   }
 ```
 
+Selain membuat **pre-configuration** sendiri kita juga dapat memproduksinya menggunakan perintah :
 
+```bash
+$ tsc --init
+```
+
+
+
+#### Option baseURL
+
+Digunakan agar **compiler** mengetahui lokasi **directory** tempat **compiler** akan melakukan **transpillation**. 
+
+
+
+#### Option outDir
+
+Digunakan agar **compiler** memproduksi **output target javascript file** ke dalam lokasi **directory** yang kita tentukan.
+
+
+
+#### Option noEmitOnError
+
+Pada kode di atas kita menggunakan **noEmitOnError** agar kompiler tidak memproduksi **javascript** jika di kode **typescript** yang ditulis masih terdapat **error**. 
+
+
+
+#### Option Target
+
+Target spesifikasi kode **javascript** yang ingin diproduksi, terdapat spesifikasi sebagai berikut :
+
+- ES 3
+- ES 5
+- ES 2015 ... ES 2020
+- ES Next
+
+Jika sudah eksekusi perintah di bawah ini :
+
+```bash
+$ tsc
+```
+
+Maka kompiler akan mengeksekusi **script** sesuai dengan konfigurasi yang telah diberikan.
+
+
+
+#### Option Watch
+
+Jika kita ingin melakukan **watch mode** tambahkan kedalam **tsconfig.json** :
+
+```
+"watch" : true
+```
+
+
+
+#### Option Module
+
+Pada **Typescript** terdapat konsep **Module format** yaitu sebuah **syntax** yang digunakan untuk membuat sebuah **module**. Sebagai contoh pada **Universal Module Definition (UMD)**, **format** ini dapat digunakan di dalam **browser** dan **node.js**.
+
+Pada **Module Format CommonJS (CommonJS)**, format ini digunakan di dalam **Node.js** cirinya penggunaan **keyword** **require** dan **module.exports** untuk menentukan sebuah **dependencies** dan **modules**.
+
+**Format Module** yang didukung adalah :
+
+1. None
+2. CommonJS
+3. AMD
+4. UMD
+5. System
+6. ES6, ES2015, ESNext
+
+Anda akan mempelajarinya lebih detail pada **Chapter Compiling Modules**.
+
+
+
+#### More Options
+
+Untuk mengetahui lebih lengkap **options** yang disediakan kunjungi halaman berikut :
+
+https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
 ----
 
