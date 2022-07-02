@@ -12,6 +12,7 @@
     - Transpillation
     - Compiler Options
   - New Features?
+    - JSDoc Name Suggestion
     - New File Extensions
     - CommonJS Interoperability
   - Node Typing
@@ -257,6 +258,38 @@ https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
 
 ## New Features ?
+
+
+
+### JSDoc Name Suggestion
+
+Dengan **JSDoc** kita bisa mendokumentasikan sebuah **parameters function** menggunakan **@param** tag :
+
+```javascript
+/**
+ * @param x The first operand
+ * @param y The second operand
+ */
+function add(x, y) {
+    return x + y;
+}
+```
+
+Jika komentar yang kita tulis ternyata sudah tidak **update** maka **typescript** sekarang akan memberikan **suggestion** bahwa **JSDoc Comment** sudah tidak lagi relevan dengan fungsi yang telah kita tulis.
+
+```javascript
+/**
+ * @param x {number} The first operand
+ * @param y {number} The second operand
+ */
+function add(a, b) {
+    return a + b;
+}
+```
+
+Di bawah ini adalah contoh **suggestion** yang diberikan oleh **typescript** :
+
+<img src="assets/JSDoc-Typescript.png" style="zoom:100%;" />
 
 
 
