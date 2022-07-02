@@ -17,3 +17,18 @@ const person: Person = {
 };
 
 console.log(personSchema.isValidSync(person));
+
+//Another Example
+let schemaEmail = yup.object().shape({
+  email: yup.string().email("Not a proper email"), // pass your error message string
+});
+
+// check validity
+schemaEmail
+  .validate({
+    email: "not.a.valid.email",
+  })
+  .catch((err) => {
+    console.log(err.name); // ValidationError
+    console.log(err.errors); // ['Not a proper email']
+  });

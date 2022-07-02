@@ -6,6 +6,7 @@
 
 - Typescript
   - Node Typing
+  - Type Annotations
   - Modules
     - Export 
     - Import - Single Module
@@ -22,6 +23,30 @@
 
 
 # Typescript
+
+| Parameter                   | Value                                                        | Note |
+| --------------------------- | ------------------------------------------------------------ | ---- |
+|                             |                                                              |      |
+| Typescript Compiler Options | [Click Here](https://www.typescriptlang.org/docs/handbook/compiler-options.html) |      |
+|                             |                                                              |      |
+
+Reserved.
+
+
+
+----
+
+
+
+## Install
+
+## 
+
+---
+
+
+
+
 
 Untuk memulai **typescript project**, buatlah sebuah **folder** kemudian eksekusi perintah berikut :
 
@@ -79,7 +104,7 @@ Buatlah file **test.ts** kemudian tulis kode berikut :
 console.log("Hello World!"); //Prints Hello World!
 ```
 
-Jika project yang kita buat adalah **node applications** maka akan muncul informasi **error** seperti berikut :
+Jika **project** yang kita buat adalah **node applications** maka akan muncul informasi **error** seperti berikut :
 
 ```
 any
@@ -92,7 +117,7 @@ Jika kita memasang :
 $ npm install @types/node --save-dev
 ```
 
-Jika kita arahkan **cursor** kita pada **keyword console** maka akan muncul tooltips berisi **information** terkait **namespace console** :
+Jika kita arahkan **cursor** kita pada **keyword console** maka akan muncul **tooltips** berisi **information** terkait **namespace console** :
 
 ```javascript
 namespace console
@@ -155,6 +180,22 @@ Jika project yang kita buat adalah web applications di dalam browser tambahkan k
 ```
 
 
+
+---
+
+
+
+## Type Annotations
+
+**Typescript** menggunakan **Type Annotations** untuk memberikan informasi tipe data secara eksplisit pada sebuah **identifier**.  Ketika suatu **identifier**, baik itu sebuah **variable**, **function**, atau **object** telah diberikan sebuah **annotations** maka **identifier** tersebut hanya dapat menggunakan **data type** yang telah diberikan. 
+
+**Typescript** hadir agar kita melakukan **Static Typing** terlebih dahulu sehingga mencegah kita untuk membuat sebuah **generic variable**. Jika kita melakukan pengembangan aplikasi menggunakan **Deno runtime** yang telah menggunakan **typescript** maka kita akan menggunakan **type annotation** setiap kali kita membuat sebuah **identifier**.
+
+Saat kita mendeklarasikan suatu variabel dalam **typescript** kita harus menambahkan sebuah **colon** dan **type annotation**. Di bawah ini adalah **type annotation** yang tersedia di dalam **typescript** :
+
+
+
+---
 
 
 
@@ -288,3 +329,73 @@ Mengenai **Target Environment** :
 - Jika target yang kita inginkan adalah **server-side applications** untuk **node.js** gunakan **CommonJS Module Loader**.
 - Jika target yang kita inginkan adalah **client-side applications** dalam **web browser apps** gunakan **AMD Target** yang dapat dimuat dengan **require.js**.
 - Jika target yang kita inginkan adalah **server-side** dan **client-side modules** gunakan **UMD Target**.
+
+
+
+----
+
+
+
+## Time Programming
+
+### ISO 8601
+
+**ISO 8601** adalah standar internasional yang digunakan untuk memaparkan komunikasi data terkait tanggal dan waktu (**date & time**). Di bawah ini adalah format yang diekspresikan menggunakan **ISO 8601** :
+
+|                    |                           |
+| ------------------ | ------------------------- |
+| Date               | 2022-06-23                |
+| Date & Time in UTC | 2022-06-23T03:02:50+00:00 |
+|                    | 2022-06-23T03:02:50Z      |
+|                    | 20220623T030250Z          |
+| Week               | 2022-W25                  |
+| Week with Weekday  | 2022-W25-4                |
+| Ordinal Date       | 2022-174                  |
+
+Dari data di atas **moment.js** dapat melakukan parsing format **ISO 8601** dalam bentuk **string** :
+
+```
+2013-02-08  # A calendar date part
+2013-02     # A month date part
+2013-W06-5  # A week date part
+2013-039    # An ordinal date part
+
+20130208    # Basic (short) full date
+201303      # Basic (short) year+month
+2013        # Basic (short) year only
+2013W065    # Basic (short) week, weekday
+2013W06     # Basic (short) week only
+2013050     # Basic (short) ordinal date (year + day-of-year)
+```
+
+Data waktu (**time part**) juga bisa diberikan, terpisah dari tanggal (**date**) menggunakan spasi atau simbol huruf T  :
+
+```
+2013-02-08T09            # An hour time part separated by a T
+2013-02-08 09            # An hour time part separated by a space
+2013-02-08 09:30         # An hour and minute time part
+2013-02-08 09:30:26      # An hour, minute, and second time part
+2013-02-08 09:30:26.123  # An hour, minute, second, and millisecond time part
+2013-02-08 24:00:00.000  # hour 24, minute, second, millisecond equal 0 means next day at midnight
+
+20130208T080910,123      # Short date and time up to ms, separated by comma
+20130208T080910.123      # Short date and time up to ms
+20130208T080910          # Short date and time up to seconds
+20130208T0809            # Short date and time up to minutes
+20130208T08              # Short date and time, hours only
+```
+
+Secara bawaan moment melakukan parsing dan menampilkan waktu berdasarkan **local time** :
+
+
+
+---
+
+
+
+### Browser Inconsistent
+
+Di bawah ini adalah data terkait **Javascript Date Parsing** secara **cross-browser** masih inkonsisten :
+
+https://dygraphs.com/date-formats.html
+
