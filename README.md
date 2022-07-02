@@ -44,6 +44,12 @@ Jika anda melihat gambar di atas pasti faham, setiap **Javascript Code** adalah 
 
 Sebuah program yang ditulis menggunakan **typescript** harus dikompilasi terlebih dahulu kedalam **javascript** agar bisa dieksekusi oleh sebuah **browser** atau **javascript engine**.
 
+<img src="assets/Transpillation.png" style="zoom:100%;" />
+
+Sebagai **superset javascript** kita dapat mengubah setiap **javascript file** ke dalam **typescript file** dengan cara mengubah ekstensinya :
+
+<img src="assets/Javascript-to-Typescript.png" style="zoom:100%;" />
+
 
 
 ----
