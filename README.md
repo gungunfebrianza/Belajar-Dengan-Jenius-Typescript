@@ -11,6 +11,9 @@
     - Typescript Compiler
     - Transpillation
     - Compiler Options
+  - New Features?
+    - New File Extensions
+    - CommonJS Interoperability
   - Node Typing
   - Type Annotations
   - Modules
@@ -216,18 +219,30 @@ Jika kita ingin melakukan **watch mode** tambahkan kedalam **tsconfig.json** :
 
 Pada **Typescript** terdapat konsep **Module format** yaitu sebuah **syntax** yang digunakan untuk membuat sebuah **module**. Sebagai contoh pada **Universal Module Definition (UMD)**, **format** ini dapat digunakan di dalam **browser** dan **node.js**.
 
-Pada **Module Format CommonJS (CommonJS)**, format ini digunakan di dalam **Node.js** cirinya penggunaan **keyword** **require** dan **module.exports** untuk menentukan sebuah **dependencies** dan **modules**.
+Pada **Runtime Engine Node.js**, **Module Format** yang digunakan adalah **CommonJS**, cirinya adalah penggunaan **keyword** **require** dan **module.exports** untuk menentukan sebuah **dependencies** dan **modules**.
 
 **Format Module** yang didukung adalah :
 
 1. None
 2. CommonJS
-3. AMD
-4. UMD
-5. System
-6. ES6, ES2015, ESNext
+3. Node16
+4. AMD
+5. UMD
+6. System
+7. ES6, ES2015, ESNext
+8. NodeNext
 
 Anda akan mempelajarinya lebih detail pada **Chapter Compiling Modules**.
+
+Pada Typescript terdapat dua format module yang didukung yaitu **node16** dan **nodenext** :
+
+```
+{
+    "compilerOptions": {
+        "module": "node16",
+    }
+}
+```
 
 
 
@@ -238,6 +253,60 @@ Untuk mengetahui lebih lengkap **options** yang disediakan kunjungi halaman beri
 https://www.typescriptlang.org/docs/handbook/compiler-options.html
 
 ----
+
+
+
+## New Features ?
+
+
+
+### New FIle Extension
+
+**Node.js** secara original menggunakan **CommonJS Format Module** dengan ciri penggunakan **keyword require** dan **module.export**. Namun selain **Format Module CommonJS** juga terdapat **EcmaScript Format Module**  dengan ciri penggunaan **keyword import** dan **export**, karena **EcmaScript** menjadi standard maka **Node.js** harus bisa memberikan dukungan untuk **EcmaScript Module**.
+
+**Node.js** akan membaca ekstensi **file .cjs** sebagai **CommonJS Modules** dan **.mjs** sebagai **EcmaScript Modules**.
+
+Semenjak versi **4.7 typescript** telah mendukung dua ekstensi **file** yaitu **.mts** dan **.cts**. Hal ini membuat **typescript** mendukung pembuatan **file declaration** baru dengan ekstensi **d.mts** dan **d.cts**,
+
+
+
+### CommonJS Interoperability
+
+**Node.js** memberikan dukungan pada **ES Modules** untuk bisa menggunakan / **Import CommonJS Modules** : 
+
+```typescript
+// ./foo.cts
+export function helper() {
+    console.log("hello world!");
+}
+
+// ./bar.mts
+import foo from "./foo.cjs";
+
+// prints "hello world!"
+foo.helper();
+```
+
+Kita juga dapat menggunakan **named export** dari sebuah **CommonJS Module** seperti di bawah ini :
+
+```typescript
+// ./foo.cts
+export function helper() {
+    console.log("hello world!");
+}
+
+// ./bar.mts
+import { helper } from "./foo.cjs";
+
+// prints "hello world!"
+helper();
+```
+
+
+
+----
+
+
 
 
 
@@ -544,10 +613,12 @@ Untuk kompilasi **modules** kita harus menentukan dulu **target environment** ya
 
 1. None
 2. CommonJS
-3. AMD
-4. UMD
-5. System
-6. ES6, ES2015, ESNext
+3. Node16
+4. AMD
+5. UMD
+6. System
+7. ES6, ES2015, ESNext
+8. NodeNext
 
 Tambahkan **flags** berikut saat melakukan kompilasi **modules** :
 
