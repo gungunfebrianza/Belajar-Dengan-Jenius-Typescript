@@ -60,6 +60,27 @@ Sebagai **superset javascript** apa saja keuntungan yang dapat diberikan oleh **
 
 ## Compilation
 
+Pada **javascript** kita harus mengeksekusi kode **javascript** terlebih dahulu untuk memastikan bahwa program **javascript** benar benar **valid**. Pada **typescript**, terdapat proses **transpillation**.
+
+Proses **transpillation** dari **typescript** ke dalam **javascript** memberikan kelebihan untuk melakukan **error checking**. **Typescript compiler** akan memeriksa kode dan memproduksi **error** jika terdapat kesalahan. **Error** dapat terdeteksi sebelum kode dieksekusi.
+
+
+
+### Static Typing
+
+**Javascript** adalah bahasa yang memiliki karakteristik **dynamic typing**. Sebagai **superset**, **typescript** memberikan kelebihan baru yaitu dukungan karakteristik **static typing**. So, apasih keunggulan dari **static typing** ? 
+
+<img src="assets/Static-Typing.png" style="zoom:100%;" />
+
+Setiap kali kita membuat sebuah variabel kita harus menentukan terlebih dahulu tipe data yang akan digunakan. Hal ini melindungi **developer** dari sekumpulan **bug** umum yang sering muncul dan **security flaw** dari kode yang kita tulis. 
+
+Dengan begitu pengembangan **software** menjadi lebih aman, sebagai contoh di bawah ini kita membuat variabel **name** dengan tipe data **number**. Namun kita memberikan literal **string** sehingga kode **javascript** akan gagal saat dikompilasi ke dalam **javascript** :
+
+```typescript
+let fullname: number;
+fullname = "Maudy Ayunda"; // compile-time error
+```
+
 
 
 ----
