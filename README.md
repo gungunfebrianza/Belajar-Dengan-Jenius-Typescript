@@ -17,7 +17,13 @@
     - CommonJS Interoperability
   - Node Typing
   - Type Annotations
+  - Object
   - Object Types
+  - Object Comparison
+    - Referential Equality
+    - Property Comparison
+    - Shallow Equality
+    - Deep Equality
   - Modules
     - Export 
     - Import - Single Module
@@ -535,6 +541,20 @@ Di bawah ini adalah deklarasi tipe data secara implisit, **typescript compiler**
 
 
 
+## Object
+
+Sebelumnya kita telah mempelajari apa itu **object** dalam konteks **data types**, namun sebelum mengeksplorasi pembuatan dan pemanfaatan **object**. Tahukah anda definisi **object** benar-benar sangat ambigu dalam **javascript** jika kita amati secara detail.
+
+**Object** yang telah kita pelajari sebelumnya adalah sebuah **Fundamental Object** yang menjadi bagian dari **built-in Object** dalam sebuah **javascript engine**.
+
+<img src="assets/Built-in-Object.png" style="zoom:120%;" />
+
+---
+
+
+
+
+
 ## Object Types
 
 Pada **typescript** untuk membuat **object** kita dapat memanfaatkan **type template** :
@@ -584,6 +604,28 @@ const Interface_bitcoin: IBlockchain = {
   totalCoin: 21000000,
 };
 ```
+
+
+
+
+
+## Object Comparison
+
+
+
+### Referential Equality 
+
+
+
+### Property Comparison 
+
+
+
+### Shallow Equality 
+
+
+
+### Deep Equality
 
 
 
