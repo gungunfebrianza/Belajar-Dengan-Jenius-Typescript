@@ -549,6 +549,51 @@ Sebelumnya kita telah mempelajari apa itu **object** dalam konteks **data types*
 
 <img src="assets/Built-in-Object.png" style="zoom:120%;" />
 
+
+
+---
+
+
+
+### Fundamental Objects
+
+**Pada dasarnya segala sesuatu yang ada didalam javascript adalah sebuah object,** namun begitu dalam **javascript** terdapat **fundamental object(s)** yang menjadi dasar **object** semua **objects** yang ada di dalam **javascript**. 
+
+Di antaranya adalah :
+
+1. Object
+2. Function
+3. Boolean
+4. Symbol
+5. Error
+6. EvalError
+7. InternalError
+8. RangeError
+9. ReferenceError
+10. SyntaxError
+11. TypeError
+12. URIError
+
+
+
+Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan **function constructor**. **Function** adalah salah satu dari bagian **fundamental object** yang dimiliki oleh **javascript**.
+
+
+
+---
+
+
+
+### Custom Object
+
+**Saya tegaskan sekali lagi pada dasarnya segala sesuatu yang ada didalam javascript adalah sebuah object,** meskipun begitu kita tetap mempunyai kesempatan untuk membuat **custom object** buatan kita sendiri. 
+
+<img src="assets/Custom-Object.png" style="zoom:120%;" />
+
+Ada tiga cara membuat **custom object**, menggunakan **Object Initializer**, **Object Constructor**, dan **function style** : 
+
+
+
 ---
 
 
