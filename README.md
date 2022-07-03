@@ -666,6 +666,23 @@ const Interface_bitcoin: IBlockchain = {
 
 
 
+### Object Destructure
+
+**Javascript** sudah mendukung operasi **destructure** untuk **object literal**, sehingga kita dapat menggunakannya juga dalam **typescript**. Perhatikan contoh kode di bawah ini :
+
+```typescript
+const Interface_bitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+const { name, creator } = Interface_bitcoin;
+console.log(`${name} is invented by ${creator}`);
+```
+
+
+
 ### Optional Properties
 
 Pada **typescript** kita bisa membuat **optional properties** pada suatu **object**, sehingga kita memiliki opsi untuk bisa menentukan penggunaan **property** dalam **object**  :
