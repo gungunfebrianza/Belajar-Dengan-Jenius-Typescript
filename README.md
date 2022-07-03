@@ -18,6 +18,8 @@
   - Node Typing
   - Type Annotations
   - Object
+    - Fundamental Objects
+    - Custom Object
   - Object Types
   - Object Comparison
     - Referential Equality
@@ -703,6 +705,59 @@ console.log(Type_bitcoin === blockchain); //false
 ### Deep Equality
 
 
+
+## Complex Object Types
+
+Dengan **typescript** kita dapat membuat **complex object type** :
+
+```typescript
+type TypeAlias = number[];
+
+let objComplex: {
+  a: string[];
+  b: (param: string[]) => string[];
+  c: { d: boolean; e: TypeAlias };
+} = {
+  a: ["Hi", "Maudy"],
+  b: function (param: string[]): string[] {
+    return this.a;
+  },
+  c: { d: true, e: [22, 33] },
+};
+
+console.log(objComplex);
+```
+
+Output dari kode di atas adalah :
+
+```
+{
+  a: [ 'Hi', 'Maudy' ],
+  b: [Function: b],
+  c: { d: true, e: [ 22, 33 ] }
+}
+```
+
+Kode di atas dapat disederhanakan menjadi :
+
+```typescript
+type TypeAlias = number[];
+type ComplexObj = {
+    a: string[];
+    b: (param: string[]) => string[];
+    c: { d: boolean; e: TypeAlias };
+};
+
+let objComplex: ComplexObj = {
+    a: ["Hi", "Maudy"],
+    b: function (param: string[]): string[] {
+        return this.a;
+    },
+    c: { d: true, e: [22, 33] },
+};
+
+console.log(objComplex);
+```
 
 
 
