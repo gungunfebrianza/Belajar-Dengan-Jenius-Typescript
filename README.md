@@ -656,6 +656,36 @@ const Interface_bitcoin: IBlockchain = {
 
 ## Object Comparison
 
+Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **interface** dan **type alias** maka hasilnya :
+
+```typescript
+console.log(typeof blockchain); //object
+console.log(blockchain);
+
+console.log(typeof Interface_bitcoin);  //object
+console.log(Interface_bitcoin);
+
+console.log(typeof Type_bitcoin); //object
+console.log(Type_bitcoin);
+
+console.log(Interface_bitcoin == Type_bitcoin); //false
+console.log(Interface_bitcoin === Type_bitcoin); //false
+```
+
+Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **type template** dan **interface** maka hasilnya :
+
+```typescript
+console.log(blockchain == Interface_bitcoin); //false
+console.log(blockchain === Interface_bitcoin); //false
+```
+
+Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **type alias** dan **type interface** maka hasilnya :
+
+```typescript
+console.log(Type_bitcoin == blockchain); //false
+console.log(Type_bitcoin === blockchain); //false
+```
+
 
 
 ### Referential Equality 
