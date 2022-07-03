@@ -26,6 +26,7 @@
     - Property Comparison
     - Shallow Equality
     - Deep Equality
+  - Complex Object Types
   - Modules
     - Export 
     - Import - Single Module
@@ -543,7 +544,7 @@ Di bawah ini adalah deklarasi tipe data secara implisit, **typescript compiler**
 
 
 
-## Object
+# Object
 
 Sebelumnya kita telah mempelajari apa itu **object** dalam konteks **data types**, namun sebelum mengeksplorasi pembuatan dan pemanfaatan **object**. Tahukah anda definisi **object** benar-benar sangat ambigu dalam **javascript** jika kita amati secara detail.
 
@@ -557,7 +558,7 @@ Sebelumnya kita telah mempelajari apa itu **object** dalam konteks **data types*
 
 
 
-### Fundamental Objects
+## Fundamental Objects
 
 **Pada dasarnya segala sesuatu yang ada didalam javascript adalah sebuah object,** namun begitu dalam **javascript** terdapat **fundamental object(s)** yang menjadi dasar **object** semua **objects** yang ada di dalam **javascript**. 
 
@@ -586,13 +587,13 @@ Sebelumnya kita telah mempelajari cara membuat **function object** menggunakan *
 
 
 
-### Custom Object
+## Custom Object Types
 
 **Saya tegaskan sekali lagi pada dasarnya segala sesuatu yang ada didalam javascript adalah sebuah object,** meskipun begitu kita tetap mempunyai kesempatan untuk membuat **custom object** buatan kita sendiri. 
 
 <img src="assets/Custom-Object.png" style="zoom:120%;" />
 
-Ada tiga cara membuat **custom object**, menggunakan **Object Initializer**, **Object Constructor**, dan **function style** : 
+Dalam buku berjudul [belajar dengan Jenius Node.js](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Node.js/blob/master/id/C2.Sub7.Object.md#fundamental-object) yang telah saya tulis ada tiga cara membuat **custom object**, menggunakan **Object Initializer**, **Object Constructor**, dan **function style**.
 
 
 
@@ -600,9 +601,7 @@ Ada tiga cara membuat **custom object**, menggunakan **Object Initializer**, **O
 
 
 
-
-
-## Object Types
+### Type Template
 
 Pada **typescript** untuk membuat **object** kita dapat memanfaatkan **type template** :
 
@@ -620,6 +619,10 @@ const blockchain: {
 
 Pada kode di atas kita akan memberikan terlebih dahulu tipe data yang akan digunakan untuk setiap **properties** dalam **object blockchain**.
 
+
+
+### Type Alias
+
 Kita juga dapat membuat **object** menggunakan **type alias** :
 
 ```typescript
@@ -635,6 +638,10 @@ const Type_bitcoin: TBlockchain = {
   totalCoin: 21000000,
 };
 ```
+
+
+
+### Interface
 
 Kita juga dapat membuat **object** menggunakan **interface** :
 
@@ -654,59 +661,37 @@ const Interface_bitcoin: IBlockchain = {
 
 
 
+### Optional Properties
 
-
-## Object Comparison
-
-Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **interface** dan **type alias** maka hasilnya :
+Pada **typescript** kita bisa membuat **optional properties** pada suatu **object**, sehingga kita memiliki opsi untuk bisa menentukan penggunaan **property** dalam **object**  :
 
 ```typescript
-console.log(typeof blockchain); //object
-console.log(blockchain);
+interface person {
+  fullname: "Gun Gun Febrianza";
+  twitter: string;
+  listCoin: string[];
+  bitcoiners?: boolean;
+}
 
-console.log(typeof Interface_bitcoin);  //object
-console.log(Interface_bitcoin);
+const man: person = {
+  fullname: "Gun Gun Febrianza",
+  twitter: "@daddybitcoin",
+  listCoin: ["Bitcoin", "Liquid Bitcoin"],
+};
 
-console.log(typeof Type_bitcoin); //object
-console.log(Type_bitcoin);
+const libertarian: person = {
+  fullname: "Gun Gun Febrianza",
+  twitter: "@daddybitcoin",
+  listCoin: ["Bitcoin", "Liquid Bitcoin"],
+  bitcoiners: true,
+};
 
-console.log(Interface_bitcoin == Type_bitcoin); //false
-console.log(Interface_bitcoin === Type_bitcoin); //false
-```
-
-Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **type template** dan **interface** maka hasilnya :
-
-```typescript
-console.log(blockchain == Interface_bitcoin); //false
-console.log(blockchain === Interface_bitcoin); //false
-```
-
-Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **type alias** dan **type interface** maka hasilnya :
-
-```typescript
-console.log(Type_bitcoin == blockchain); //false
-console.log(Type_bitcoin === blockchain); //false
+console.log(man);
 ```
 
 
 
-### Referential Equality 
-
-
-
-### Property Comparison 
-
-
-
-### Shallow Equality 
-
-
-
-### Deep Equality
-
-
-
-## Complex Object Types
+### Complex Object Types
 
 Dengan **typescript** kita dapat membuat **complex object type** :
 
@@ -758,6 +743,94 @@ let objComplex: ComplexObj = {
 
 console.log(objComplex);
 ```
+
+
+
+
+
+## Object Comparison
+
+Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **interface** dan **type alias** maka hasilnya :
+
+```typescript
+const blockchain: {
+  name: string;
+  creator: string;
+  totalCoin: number;
+} = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+type TBlockchain = {
+  name: string;
+  creator: string;
+  totalCoin: number;
+};
+
+const Type_bitcoin: TBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+interface IBlockchain {
+  name: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const Interface_bitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+console.log(typeof blockchain); //object
+console.log(blockchain);
+
+console.log(typeof Interface_bitcoin);  //object
+console.log(Interface_bitcoin);
+
+console.log(typeof Type_bitcoin); //object
+console.log(Type_bitcoin);
+
+console.log(Interface_bitcoin == Type_bitcoin); //false
+console.log(Interface_bitcoin === Type_bitcoin); //false
+```
+
+Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **type template** dan **interface** maka hasilnya :
+
+```typescript
+console.log(blockchain == Interface_bitcoin); //false
+console.log(blockchain === Interface_bitcoin); //false
+```
+
+Jika kita melakukan perbandingan dua **object** yang dibuat menggunakan **type alias** dan **type interface** maka hasilnya :
+
+```typescript
+console.log(Type_bitcoin == blockchain); //false
+console.log(Type_bitcoin === blockchain); //false
+```
+
+
+
+### Referential Equality 
+
+
+
+### Property Comparison 
+
+
+
+### Shallow Equality 
+
+
+
+### Deep Equality
+
+
 
 
 
