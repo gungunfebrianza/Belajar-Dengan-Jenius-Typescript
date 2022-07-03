@@ -25,6 +25,8 @@
       - Interface
       - Object De-structure
       - Dynamic Properties
+        - Index Type Signature
+        - Record Type
       - Optional Properties
       - Complex Object Types
     - Object Comparison
@@ -687,6 +689,8 @@ console.log(`${name} is invented by ${creator}`);
 
 ### Dynamic Properties
 
+#### Index Type Signature
+
 Kita dapat membuat **dynamic properties** pada suatu **object** menggunakan **Index Type Signature**, perhatikan contoh kode di bawah ini :
 
 ```typescript
@@ -722,6 +726,21 @@ console.log(Opolygon); // { type: { testNet: 'Mumbai', layer: 'Layer2' }, name: 
 ```
 
 Pada contoh kasus di atas tanpa **property name**, **object Opolygon** tidak dapat dibuat.
+
+
+
+#### Record Type
+
+Kita juga dapat menggunakan **Record Type** untuk membuat **object** dengan karakteristik **dynamic properties** :
+
+```typescript
+const agent: Record<string, any> = {};
+agent.name = "Gun";
+agent.age = 30;
+agent.skill = ["DevOps", "Blockchain"];
+
+console.log(agent); //{ name: 'Gun', age: 30, skill: [ 'DevOps', 'Blockchain' ] }
+```
 
 
 
@@ -906,7 +925,7 @@ console.log(Type_bitcoin === blockchain); //false
 
 Pada **javascript** kita bisa menambahkan **property** baru pada suatu **object** dengan **prototype**, **typescript** menyediakan cara yang lebih elegan untuk menambahkan **property** pada suatu **object** menggunakan **keyword extend** :
 
-```
+```typescript
 interface coin extends creator {
   name: string;
   supply: number;

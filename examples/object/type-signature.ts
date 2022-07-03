@@ -22,3 +22,9 @@ boredAPE.amount = 10000;
 
 console.log(Opolygon);
 console.log(boredAPE);
+
+const agent: Record<string, any> = {};
+agent.name = "Gun";
+agent.age = 30;
+agent.skill = ["DevOps", "Blockchain"];
+console.log(agent);
