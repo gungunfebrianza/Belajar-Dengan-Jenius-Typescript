@@ -23,6 +23,8 @@
       - Type Template
       - Type Alias
       - Interface
+      - Object De-structure
+      - Dynamic Properties
       - Optional Properties
       - Complex Object Types
     - Object Comparison
@@ -679,6 +681,30 @@ const Interface_bitcoin: IBlockchain = {
 
 const { name, creator } = Interface_bitcoin;
 console.log(`${name} is invented by ${creator}`);
+```
+
+
+
+### Dynamic Properties
+
+Kita dapat membuat **dynamic properties** pada suatu **object** menggunakan **Index Type Signature** 
+
+```typescript
+interface blockchain {
+  [key: number]: number;
+  [key: string]: any;
+  name: string;
+}
+
+const Opolygon: blockchain = {
+  10: 99,
+  type: {
+    testNet: "Mumbai",
+    layer: "Layer2",
+  },
+  name: "Polygon PoS",
+};
+
 ```
 
 
