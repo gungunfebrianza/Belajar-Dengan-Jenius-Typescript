@@ -687,17 +687,30 @@ console.log(`${name} is invented by ${creator}`);
 
 ### Dynamic Properties
 
-Kita dapat membuat **dynamic properties** pada suatu **object** menggunakan **Index Type Signature** 
+Kita dapat membuat **dynamic properties** pada suatu **object** menggunakan **Index Type Signature**, perhatikan contoh kode di bawah ini :
+
+```typescript
+interface NFT {
+  [key: string]: any;
+}
+
+const boredAPE: NFT = {};
+boredAPE.creator = "Yuga Labs";
+boredAPE.builtOn = "Ethereum";
+boredAPE.amount = 10000;
+
+console.log(boredAPE); // { creator: 'Yuga Labs', builtOn: 'Ethereum', amount: 10000 }
+```
+
+Kita juga bisa mengkombinasikan **Index Type Signature** dan **Interface Property** agar bisa menambahkan **specific properties** yang memaksa harus digunakan ketika **object** diciptakan :
 
 ```typescript
 interface blockchain {
-  [key: number]: number;
   [key: string]: any;
   name: string;
 }
 
 const Opolygon: blockchain = {
-  10: 99,
   type: {
     testNet: "Mumbai",
     layer: "Layer2",
@@ -705,7 +718,10 @@ const Opolygon: blockchain = {
   name: "Polygon PoS",
 };
 
+console.log(Opolygon); // { type: { testNet: 'Mumbai', layer: 'Layer2' }, name: 'Polygon PoS' }
 ```
+
+Pada contoh kasus di atas tanpa **property name**, **object Opolygon** tidak dapat dibuat.
 
 
 
