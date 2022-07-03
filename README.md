@@ -19,14 +19,19 @@
   - Type Annotations
   - Object
     - Fundamental Objects
-    - Custom Object
-  - Object Types
-  - Object Comparison
-    - Referential Equality
-    - Property Comparison
-    - Shallow Equality
-    - Deep Equality
-  - Complex Object Types
+    - Custom Object Types
+      - Type Template
+      - Type Alias
+      - Interface
+      - Optional Properties
+      - Complex Object Types
+    - Object Comparison
+      - Referential Equality
+      - Property Comparison
+      - Shallow Equality
+      - Deep Equality
+  - Interface 
+    - Extends
   - Modules
     - Export 
     - Import - Single Module
@@ -829,6 +834,39 @@ console.log(Type_bitcoin === blockchain); //false
 
 
 ### Deep Equality
+
+
+
+
+
+## Interface
+
+
+
+### Extends
+
+Pada **javascript** kita bisa menambahkan **property** baru pada suatu **object** dengan **prototype**, **typescript** menyediakan cara yang lebih elegan untuk menambahkan **property** pada suatu **object** menggunakan **keyword extend** :
+
+```
+interface coin extends creator {
+  name: string;
+  supply: number;
+}
+
+interface creator {
+  created: string;
+  author: "Satoshi Nakamoto";
+}
+
+const bitcoin: coin = {
+  name: "bitcoin",
+  supply: 21000000,
+  created: "2009",
+  author: "Satoshi Nakamoto",
+};
+
+console.log(bitcoin);
+```
 
 
 
