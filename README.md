@@ -17,6 +17,7 @@
     - CommonJS Interoperability
   - Node Typing
   - Type Annotations
+  - Object Types
   - Modules
     - Export 
     - Import - Single Module
@@ -41,7 +42,9 @@ Last Touched 3-7-2022.
 | Official Website                       | [Click Here](https://www.typescriptlang.org/)                |      |
 | Announcing Typescript 4.8 Beta Version | [Click Here](https://devblogs.microsoft.com/typescript/announcing-typescript-4-8-beta/) |      |
 | Release Note Typescript 4.7            | [Click Here](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html) |      |
+| Typescript Blog                        | [Click Here](https://devblogs.microsoft.com/typescript/)     |      |
 | Typescript Compiler Options            | [Click Here](https://www.typescriptlang.org/docs/handbook/compiler-options.html) |      |
+|                                        |                                                              |      |
 |                                        |                                                              |      |
 
 **Typescript** adalah sebuah **superset javascript** yang dikembangkan oleh **Microsoft**. **Typescript** juga digunakan dalam sebuah **Open Source Project** yang menginspirasi **Ryan Dahl** bernama **Deno**, sebuah **Runtime Engine** yang dapat digunakan untuk mengeksekusi **Typescript**.
@@ -529,6 +532,60 @@ Di bawah ini adalah deklarasi tipe data secara implisit, **typescript compiler**
 
 
 ---
+
+
+
+## Object Types
+
+Pada **typescript** untuk membuat **object** kita dapat memanfaatkan **type template** :
+
+```typescript
+const blockchain: {
+  name: string;
+  creator: string;
+  totalCoin: number;
+} = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+```
+
+Pada kode di atas kita akan memberikan terlebih dahulu tipe data yang akan digunakan untuk setiap **properties** dalam **object blockchain**.
+
+Kita juga dapat membuat **object** menggunakan **type alias** :
+
+```typescript
+type TBlockchain = {
+  name: string;
+  creator: string;
+  totalCoin: number;
+};
+
+const Type_bitcoin: TBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+```
+
+Kita juga dapat membuat **object** menggunakan **interface** :
+
+```typescript
+interface IBlockchain {
+  name: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const Interface_bitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+```
+
+
 
 
 
