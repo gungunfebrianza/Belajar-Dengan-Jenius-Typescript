@@ -33,6 +33,7 @@
       - [Optional Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#optional-properties)
       - [Read Only Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#read-only-properties)
       - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extending-types)
+      - Generic Object Types
       - [Complex Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#complex-object-types)
     - [Object Comparison](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object-comparison)
       - [Referential Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#referential-equality)
@@ -40,8 +41,8 @@
       - [Shallow Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#shallow-equality)
       - [Deep Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#deep-equality)
   - [Interface](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#interface-1) 
-    - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extends)
-    - Intersection Types
+    - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extending-types-1)
+    - [Intersection Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#intersection-types)
   - [Modules](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#modules)
     - Export 
     - Import - Single Module
@@ -847,6 +848,36 @@ Anda bisa membaca di kajian tentang [interface](https://github.com/gungunfebrian
 
 
 ---
+
+
+
+### Generic Object Types
+
+Di bawah ini adalah contoh **Generic Object Types** :
+
+```typescript
+interface CryptoCoin<Type> {
+  CoinType: Type;
+  EVMBased?: Type;
+  shitcoin?: Type;
+}
+
+let whatCoin: CryptoCoin<string> = {
+  CoinType: "ERC-20 Token",
+};
+
+console.log(whatCoin.CoinType);
+
+type boolOrNumber = boolean | number;
+
+let anyCoin: CryptoCoin<boolOrNumber | string> = {
+  CoinType: 1,
+  EVMBased: true,
+  shitcoin: "No",
+};
+
+console.log(anyCoin);
+```
 
 
 
