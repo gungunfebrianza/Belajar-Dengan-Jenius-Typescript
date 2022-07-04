@@ -19,6 +19,8 @@
   - [Type Annotations](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-annotations)
     - [Declare Explicit](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#declare-explicit)
     - [Declare Implicit](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#declare-implicit)
+  - Data Types
+    - Custom Types
   - [Object](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object)
     - [Fundamental Objects](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#fundamental-objects)
     - [Custom Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#custom-object-types)
@@ -33,7 +35,7 @@
       - [Optional Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#optional-properties)
       - [Read Only Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#read-only-properties)
       - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extending-types)
-      - Generic Object Types
+      - [Generic Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#generic-object-types)
       - [Complex Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#complex-object-types)
     - [Object Comparison](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object-comparison)
       - [Referential Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#referential-equality)
@@ -553,6 +555,64 @@ Di bawah ini adalah deklarasi tipe data secara implisit, **typescript compiler**
   const height = 167.13;
   const isCute = true;
 ```
+
+
+
+---
+
+
+
+# Data Types
+
+
+
+## Custom Types
+
+Dengan **type keyword** kita dapat membuat **type** baru atau sebuah **type alias**. Di bawah ini kita membuat sebuah **type alias** :
+
+```typescript
+  type Balance = number;
+  type Type = string;
+```
+
+Selanjutnya kita membuat sebuah **type** baru  :
+
+```typescript
+  type Wallet = {
+    name: string;
+    amount: Balance;
+    symbol: Type;
+  };
+```
+
+Pada **Type Wallet** di atas kita menggunakan dua buah **type alias** untuk **properties  amount** dan **symbol**. Selanjutnya kita bisa membuat sebuah variabel dengan tipe data **Wallet** :
+
+```typescript
+  let bitcoinWallet: Wallet = {
+    name: "Bitcoin",
+    amount: 5.88800007,
+    symbol: "BTC",
+  };
+```
+
+Selanjutnya setiap kali kita membuat variabel dengan tipe **Wallet** pastikan kita mengisi setiap **properties** yang tersedia jika tidak maka hasilnya akan **error**. Jika tidak ingin **error** terjadi maka kita harus menggunakan optional **properties** menggunakan **questional mark**.
+
+Perhatikan kode di bawah ini :
+
+```typescript
+  type CryptoWallet = {
+    name: string;
+    amount: Balance;
+    symbol?: Type;
+  };
+
+  let ethereumWallet: CryptoWallet = {
+    name: "Ethereum",
+    amount: 23.88800007,
+  };
+```
+
+**Property symbol** menggunakan **question mark**, jadi jika kita tidak mengisi **property symbol** saat membuat variabel **error** tidak akan terjadi.
 
 
 
