@@ -25,21 +25,23 @@
       - [Type Template](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-template)
       - [Type Alias](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-alias)
       - [Interface](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#interface)
-      - Mutable Properties
+      - [Mutable Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#mutable-properties)
       - [Object De-structure](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object-destructure)
       - [Dynamic Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#dynamic-properties)
-        - Index Type Signature
-        - Record Type
+        - [Index Type Signature](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#index-type-signature)
+        - [Record Type](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#record-type)
       - [Optional Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#optional-properties)
-      - Read Only Properties
+      - [Read Only Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#read-only-properties)
+      - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extending-types)
       - [Complex Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#complex-object-types)
     - [Object Comparison](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object-comparison)
-      - Referential Equality
-      - Property Comparison
-      - Shallow Equality
-      - Deep Equality
+      - [Referential Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#referential-equality)
+      - [Property Comparison](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#property-comparison)
+      - [Shallow Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#shallow-equality)
+      - [Deep Equality](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#deep-equality)
   - [Interface](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#interface-1) 
     - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extends)
+    - Intersection Types
   - [Modules](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#modules)
     - Export 
     - Import - Single Module
@@ -995,7 +997,7 @@ console.log(Type_bitcoin === blockchain); //false
 
 
 
-### Extends
+### Extending Types
 
 Pada **javascript** kita bisa menambahkan **property** baru pada suatu **object** dengan **prototype**, **typescript** menyediakan cara yang lebih elegan untuk menambahkan **property** pada suatu **object** menggunakan **keyword extend** :
 
@@ -1021,6 +1023,36 @@ console.log(bitcoin);
 ```
 
 
+
+---
+
+
+
+### Intersection Types
+
+**Interface** mendukung pembuatan **type** baru dengan cara mengkombinasikan antar **interface** yang disebut dengan **intersection type**. **Intersection Type** dibuat menggunakan notasi **& operator** :
+
+```typescript
+interface Bitcoin {
+  lightningNetwork: string;
+}
+interface LiquidBitcoin {
+  confidential: string;
+}
+
+type superblockchain = Bitcoin & LiquidBitcoin;
+
+const powerfulBlockchain: superblockchain = {
+  lightningNetwork: "Yes",
+  confidential: "Support Confidential Transaction!",
+};
+
+console.log(powerfulBlockchain);
+```
+
+
+
+---
 
 
 
