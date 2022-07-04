@@ -19,8 +19,8 @@
   - [Type Annotations](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-annotations)
     - [Declare Explicit](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#declare-explicit)
     - [Declare Implicit](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#declare-implicit)
-  - Data Types
-    - Custom Types
+  - [Data Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#data-types)
+    - [Custom Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#custom-types)
   - [Object](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object)
     - [Fundamental Objects](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#fundamental-objects)
     - [Custom Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#custom-object-types)
