@@ -23,6 +23,7 @@
       - Type Template
       - Type Alias
       - Interface
+      - Mutable Properties
       - Object De-structure
       - Dynamic Properties
         - Index Type Signature
@@ -666,6 +667,30 @@ const Interface_bitcoin: IBlockchain = {
   creator: "Satoshi Nakamoto",
   totalCoin: 21000000,
 };
+```
+
+
+
+### Mutable Properties
+
+Secara **under the hood**, **javascript object** bersifat **mutable** artinya nilai pada **properties** dapat diubah, sebagai contoh pada gambar di bawah ini kita akan mengubah umur maudy.
+
+```typescript
+interface IBlockchain {
+  name: string;
+  creator: string;
+  totalCoin: number;
+}
+
+const InterfaceBitcoin: IBlockchain = {
+  name: "Bitcoin",
+  creator: "Satoshi Nakamoto",
+  totalCoin: 21000000,
+};
+
+console.log(InterfaceBitcoin.creator); //Satoshi Nakamoto
+InterfaceBitcoin.creator = "Anonymous";
+console.log(InterfaceBitcoin.creator); //Anonymous
 ```
 
 
