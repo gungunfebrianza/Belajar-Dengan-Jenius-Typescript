@@ -29,6 +29,7 @@
         - Index Type Signature
         - Record Type
       - Optional Properties
+      - Read Only Properties
       - Complex Object Types
     - Object Comparison
       - Referential Equality
@@ -795,6 +796,40 @@ const libertarian: person = {
 };
 
 console.log(man);
+```
+
+
+
+### Read Only Properties
+
+Dalam **typescript** kita bisa membuat **readonly properties**, namun bukan berarti **readonly property** secara mutlak bersifat **immutable** (nilainya tidak dapat diubah sama sekali). Tujuan dari **readonly property** agar saat **development time** nilainya tidak bisa ditulis ulang terutama saat **type-checking**. Pada saat **runtime**, **readonly property** juga tidak akan mempengaruhi **behaviour** dari program yang ditulis.
+
+Di bawah ini adalah contoh manipulasi **readonly properties** melalui **object reference** :
+
+```
+interface Person {
+  name: string;
+  age: number;
+  sex: string;
+}
+
+interface ReadonlyPerson {
+  readonly name: string;
+  readonly age: number;
+}
+
+let writablePerson: Person = {
+  name: "Kodok Zuma Gempal",
+  age: 19,
+  sex: "male",
+};
+
+// works
+let readonlyPerson: ReadonlyPerson = writablePerson;
+
+console.log(readonlyPerson.age); // prints '42'
+writablePerson.age++;
+console.log(readonlyPerson.age); // prints '43'
 ```
 
 
