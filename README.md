@@ -4,41 +4,43 @@
 
 # Table of Contents
 
-- Typescript
-  - Why Typescript?
+- [Typescript](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#typescript)
+  - [Why Typescript?](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#why-typescript)
     - Compilation
     - Static Typing
     - Typescript Compiler
     - Transpillation
     - Compiler Options
-  - New Features?
+  - [New Features?](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#new-features-)
     - JSDoc Name Suggestion
     - New File Extensions
     - CommonJS Interoperability
-  - Node Typing
-  - Type Annotations
-  - Object
-    - Fundamental Objects
-    - Custom Object Types
-      - Type Template
-      - Type Alias
-      - Interface
+  - [Node Typing](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#node-typing)
+  - [Type Annotations](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-annotations)
+    - [Declare Explicit](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#declare-explicit)
+    - [Declare Implicit](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#declare-implicit)
+  - [Object](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object)
+    - [Fundamental Objects](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#fundamental-objects)
+    - [Custom Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#custom-object-types)
+      - [Type Template](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-template)
+      - [Type Alias](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#type-alias)
+      - [Interface](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#interface)
       - Mutable Properties
-      - Object De-structure
-      - Dynamic Properties
+      - [Object De-structure](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object-destructure)
+      - [Dynamic Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#dynamic-properties)
         - Index Type Signature
         - Record Type
-      - Optional Properties
+      - [Optional Properties](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#optional-properties)
       - Read Only Properties
-      - Complex Object Types
-    - Object Comparison
+      - [Complex Object Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#complex-object-types)
+    - [Object Comparison](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#object-comparison)
       - Referential Equality
       - Property Comparison
       - Shallow Equality
       - Deep Equality
-  - Interface 
-    - Extends
-  - Modules
+  - [Interface](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#interface-1) 
+    - [Extending Types](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extends)
+  - [Modules](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#modules)
     - Export 
     - Import - Single Module
     - Import - Entire Module
@@ -715,6 +717,8 @@ console.log(`${name} is invented by ${creator}`);
 
 ### Dynamic Properties
 
+Ada saatnya kita tidak dapat mengetahui karakteristik **property** dari **object** yang akan kita buat, sehingga diperlukan mekanisme pembuatan **object** yang mendukung **dynamic properties** untuk mengatasinya.
+
 #### Index Type Signature
 
 Kita dapat membuat **dynamic properties** pada suatu **object** menggunakan **Index Type Signature**, perhatikan contoh kode di bawah ini :
@@ -806,7 +810,7 @@ Dalam **typescript** kita bisa membuat **readonly properties**, namun bukan bera
 
 Di bawah ini adalah contoh manipulasi **readonly properties** melalui **object reference** :
 
-```
+```typescript
 interface Person {
   name: string;
   age: number;
@@ -831,6 +835,16 @@ console.log(readonlyPerson.age); // prints '42'
 writablePerson.age++;
 console.log(readonlyPerson.age); // prints '43'
 ```
+
+
+
+### Extending Types
+
+Anda bisa membaca di kajian tentang [interface](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#extends).
+
+
+
+---
 
 
 
