@@ -153,7 +153,7 @@ Buatlah sebuah **file** dengan nama **main.ts** kemudian tulis kode dibawah ini 
 
 ```typescript
   let fullname: string;
-  fullname = "Maudy Ayunda";
+  fullname = "Maudy Pick The Right Guy";
 ```
 
 Untuk melakukan kompilasi eksekusi perintah di bawah ini :
@@ -894,9 +894,9 @@ let writablePerson: Person = {
 // works
 let readonlyPerson: ReadonlyPerson = writablePerson;
 
-console.log(readonlyPerson.age); // prints '42'
+console.log(readonlyPerson.age); // prints '19'
 writablePerson.age++;
-console.log(readonlyPerson.age); // prints '43'
+console.log(readonlyPerson.age); // prints '20'
 ```
 
 
