@@ -6,6 +6,7 @@
 
 - [Typescript](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#typescript)
   - [Why Typescript?](https://github.com/gungunfebrianza/Belajar-Dengan-Jenius-Typescript#why-typescript)
+    - Biar keliatan edgy
     - Compilation
     - Static Typing
     - Typescript Compiler
